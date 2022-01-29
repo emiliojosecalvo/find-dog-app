@@ -1,8 +1,10 @@
 import './App.css';
+import Navbar from './Navbar';
 
 function App() {
   return (
-    <div className="App">
+    <div>
+      <Navbar />
       <h3 className='display-1'>
         DOG
         <small className="text-muted"> app</small>
