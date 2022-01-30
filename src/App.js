@@ -1,6 +1,7 @@
 import { Component } from 'react';
 import './App.css';
 import Navbar from './Navbar';
+import DogProfile from './DogProfile';
 import { Routes, Route } from 'react-router-dom';
 import DogList from './DogList';
 import hazel from './images/hazel.jpg';
@@ -45,10 +46,12 @@ class App extends Component {
   }
   render() {
     return (
+
       <div>
         <Navbar />
         <Routes>
           <Route path='/dogs' element={<DogList dogs={this.props.dogs} />} />
+          <Route path='/dogs/:id' element={<DogProfile />} />
         </Routes>
       </div>
     )

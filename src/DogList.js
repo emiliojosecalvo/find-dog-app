@@ -5,17 +5,15 @@ export class DogList extends Component {
     render() {
         return (
             <>
-                <div className='container'>
-                    <h3 className='display-1'>
-                        DOG HERE
-                        <small className="text-muted"> app</small>
-                    </h3>
-                    {this.props.dogs.map(d => (
-                        <div className='DogList-Dog col-4 text-center' key={d.name}>
-                            <img src={d.src} alt={d.name} />
-                            <h4>{d.name}</h4>
-                        </div>
-                    ))}
+                <div className='container mt-5'>
+                    <div className='row'>
+                        {this.props.dogs.map(d => (
+                            <div className='DogList-Dog col-sm-6 col-lg-4 text-center' key={d.name}>
+                                <img src={d.src} alt={d.name} />
+                                <h4>{d.name}</h4>
+                            </div>
+                        ))}
+                    </div>
                 </div>
             </>
         )
