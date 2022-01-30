@@ -4,6 +4,7 @@ export class DogProfile extends Component {
     render() {
         return (
             <>
+                <h1>Hola</h1>
             </>
         )
     }

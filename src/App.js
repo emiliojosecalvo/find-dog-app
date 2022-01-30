@@ -45,13 +45,20 @@ class App extends Component {
     ]
   }
   render() {
+    const getDog = props => {
+      let name = props.match.params.name;
+      let currentDog = this.props.dogs.find(
+        dog => dog.name.toLoweCase() === name.toLoweCase()
+      );
+      return <DogProfile {...props} dog={currentDog} />;
+    }
     return (
 
       <div>
         <Navbar />
         <Routes>
           <Route path='/dogs' element={<DogList dogs={this.props.dogs} />} />
-          <Route path='/dogs/:id' element={<DogProfile />} />
+          <Route path='/dogs/:name' render={getDog} />
         </Routes>
       </div>
     )
